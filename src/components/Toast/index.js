@@ -36,6 +36,6 @@ toast.close = () => {
 
 export default {
   install(Vue) {
-    window.Toast = Vue.prototype.Toast = toast;
+    window.Toast = Vue.Toast = Vue.prototype.Toast = toast;
   }
 }

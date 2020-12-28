@@ -1,6 +1,12 @@
 .DS_Store
 node_modules/
 /dist/
+components/
+packages/
+public/
+vue.config.js
+babel.config.js
+*.map
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*

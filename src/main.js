@@ -1,13 +1,15 @@
 import Vue from 'vue';
 import App from './App';
 import router from './router';
-import Examples from './components';
+import Examples from './components/index';
+
 import Toast from './components/Toast/index';
 
-Vue.use(Examples);
 Vue.use(Toast);
 
 Vue.config.productionTip = false;
+
+export default { Examples };
 
 new Vue({
   el: '#app',

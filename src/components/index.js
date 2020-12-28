@@ -1,16 +1,14 @@
-import Toast from './Toast';
-import Input from './Input';
+import gdInput from './Input';
 
 const components = [
-  Toast,
-  Input,
-]
+  gdInput,
+];
+
 
 const install = function (Vue) {
-  components.forEach(item => {
-    Vue.component(item);
-  });
-}
+  if (install.installed) return;
+  components.map(item => Vue.component(item.name, item));
+};
 
 if (typeof window !== 'undefined' && window.Vue) {
   install(window.Vue);
@@ -18,6 +16,5 @@ if (typeof window !== 'undefined' && window.Vue) {
 
 export default {
   install,
-  Toast,
-  Input,
+  gdInput,
 };
