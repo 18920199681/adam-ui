@@ -4,12 +4,9 @@ import router from './router';
 import Examples from './components/index';
 
 import Toast from './components/Toast/index';
-
-Vue.use(Toast);
+// Vue.use(Toast);
 
 Vue.config.productionTip = false;
-
-export default { Examples };
 
 new Vue({
   el: '#app',
@@ -17,3 +14,8 @@ new Vue({
   components: { App },
   template: '<App/>'
 });
+
+export default {
+  Examples,
+  Toast
+};
