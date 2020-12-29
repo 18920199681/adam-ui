@@ -4,7 +4,7 @@ import router from './router';
 import Examples from './components/index';
 
 import Toast from './components/Toast/index';
-// Vue.use(Toast);
+Vue.use(Toast);
 
 Vue.config.productionTip = false;
 

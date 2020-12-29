@@ -1,5 +1,5 @@
 import Vue from 'vue';
-import Toast from './toast.vue';
+import Toast from './Toast.vue';
 
 let toastInstance = Vue.extend(Toast);
 let toast_fn = new toastInstance().$mount(document.createElement('div'));

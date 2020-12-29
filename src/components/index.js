@@ -4,7 +4,6 @@ const components = [
   gdInput,
 ];
 
-
 const install = function (Vue) {
   if (install.installed) return;
   components.map(item => Vue.component(item.name, item));

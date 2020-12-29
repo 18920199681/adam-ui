@@ -1,10 +1,10 @@
 {
   "name": "adam-ui-pc",
-  "version": "1.0.14",
+  "version": "1.0.21",
   "description": "A Vue.js project",
   "author": "ADAM",
   "private": false,
-  "main": "lib/adamUiPc.umd.min.js",
+  "main": "src/main.js",
   "scripts": {
     "dev": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
     "start": "npm run dev",
