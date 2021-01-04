@@ -27,6 +27,14 @@ module.exports = {
       '@': resolve('src'),
     }
   },
+  build: {
+    // Template for index.html
+    // index: path.resolve(__dirname, '../dist/index.html'),
+    // assetsRoot: path.resolve(__dirname, '../dist'),
+    assetsSubDirectory: 'static',
+    //在这里把/改成./，如果这里加了./，那static文件夹引入的图片也要加./，这样无论打包后放到服务器的哪一级目录下，静态资源都不会报错
+    assetsPublicPath: './'
+  },
   module: {
     rules: [
       {
