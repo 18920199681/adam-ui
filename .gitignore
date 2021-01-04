@@ -1,8 +1,5 @@
 .DS_Store
 node_modules/
-/dist/
-packages/
-public/
 vue.config.js
 babel.config.js
 *.map
@@ -17,3 +14,11 @@ yarn-error.log*
 *.ntvs*
 *.njsproj
 *.sln
+
+build/
+config/
+src/
+package.json
+index.html
+static/
+lib/
