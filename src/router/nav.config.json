@@ -6,7 +6,7 @@
   },
   "toast": {
     "path": "../docs/Toast.md",
-    "cnName": "输入框",
+    "cnName": "Toast",
     "vueRouterHref": "/toast"
   }
 }

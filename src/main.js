@@ -5,12 +5,12 @@ import router from './router';
 import './assets/icons';
 
 /* 工具组件 */
-import Toast from './components/Toast/index';
+import Toast from './examples/Toast/index';
 Vue.use(Toast);
 
 
 /* 模板组件 */
-import gdInput from './components/Input';
+import gdInput from './examples/Input';
 
 const components = [
   gdInput,
