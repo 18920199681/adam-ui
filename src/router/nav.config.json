@@ -1,0 +1,12 @@
+{
+  "gd-input": {
+    "path": "../docs/Input.md",
+    "cnName": "输入框",
+    "vueRouterHref": "/gd-input"
+  },
+  "toast": {
+    "path": "../docs/Toast.md",
+    "cnName": "输入框",
+    "vueRouterHref": "/toast"
+  }
+}

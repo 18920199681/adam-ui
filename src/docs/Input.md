@@ -1,9 +1,28 @@
-# 输入框
+## 输入框
+
+<gd-input label="test：" :required="true" errorMessage="test"></gd-input>
+<script>
+import gdInput from '@/components/Input/Input.vue'; 
+
+export default {
+  components: {
+
+    gdInput,
+
+  }
+}
+</script>
+
+#### 使用示例：
+
+``` html
+<gd-input label="test：" :required="true" errorMessage="test"></gd-input>
+```
 
 #### Attributes
 
 | 参数 | 默认值 | 类型 | 说明 |
-| ---- | ---- | ---- | ---- |
+| ----- | ------- | ---- | ---- |
 | label | "" | String |  |
 | type | "" | String | 输入框类型，如果为datePicker则为如期选择器 |
 | value | "" | String | 绑定值 |

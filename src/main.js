@@ -1,7 +1,8 @@
 import Vue from 'vue';
 import App from './App';
-// import router from './router';
+import router from './router';
 
+import './assets/icons';
 
 /* 工具组件 */
 import Toast from './components/Toast/index';
@@ -35,7 +36,7 @@ Vue.config.productionTip = false;
 
 new Vue({
   el: '#app',
-  // router,
+  router,
   components: { App },
   template: '<App/>'
 });

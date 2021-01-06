@@ -23,7 +23,7 @@
 
         <input
           :value="value"
-          :type="type==='password' ? passwordType : type"
+          :type="type === 'password' ? passwordType : type"
           :placeholder="placeholder"
           @input="onInput"
           @focus="onFocus"
@@ -33,27 +33,31 @@
         />
 
         <!-- 右侧图标 -->
-        <span class="icon right-icon not-select" v-if="showEditIcon" @click="onEdit"></span>
+        <span
+          class="icon right-icon not-select"
+          v-if="showEditIcon"
+          @click="onEdit"
+        ></span>
 
-        <img
+        <span
           class="icon password-open not-select"
-          src="../../assets/icons/icon_eye_open.png"
-          alt="close"
+          @click="onShowPassword"
           v-if="type === 'password' && showPassword"
-          @click="onShowPassword"
-        />
+        >
+          <svg-icon icon-class="icon_eye_open" />
+        </span>
 
-        <img
+        <span
           class="icon password-close not-select"
-          src="../../assets/icons/icon_eye_close.png"
-          alt="open"
-          v-if="type === 'password' && !showPassword"
           @click="onShowPassword"
-        />
+          v-if="type === 'password' && !showPassword"
+        >
+          <svg-icon icon-class="icon_eye_close" />
+        </span>
       </div>
 
       <div class="is-error" v-if="errorMessage && errorMessage !== ''">
-        <img src="../../assets/icons/icon_error.png" alt="icon" />
+        <svg-icon icon-class="error" />
         {{ errorMessage }}
       </div>
     </div>
@@ -62,7 +66,7 @@
 
 <script>
 export default {
-  name: "gdInput",
+  name: "GdInput",
   props: {
     label: {
       type: String,
@@ -111,7 +115,7 @@ export default {
       isActive: false,
       isError: false,
       showPassword: false,
-      passwordType: 'password'
+      passwordType: "password",
     };
   },
 
@@ -135,9 +139,10 @@ export default {
     },
 
     onShowPassword() {
+      console.log(111);
       this.showPassword = !this.showPassword;
-      this.passwordType = this.passwordType === 'password' ? 'text' : 'password';
-    }
+      this.passwordType = this.passwordType === "password" ? "text" : "password";
+    },
   },
 };
 </script>
@@ -238,12 +243,14 @@ export default {
         width: 19px;
         height: 16px;
         margin-right: 10px;
+        line-height: 1;
       }
 
       &.password-close {
         width: 20px;
         height: 10px;
         margin-right: 10px;
+        line-height: 1;
       }
     }
 
@@ -257,7 +264,7 @@ export default {
       display: flex;
       align-items: center;
 
-      img {
+      .svg-icon {
         width: 11px;
         height: 11px;
         margin-right: 6px;

@@ -1,15 +1,33 @@
-// import Vue from 'vue'
-// import Router from 'vue-router'
-// import Welcome from '../components/Welcome'
+import Vue from 'vue';
+import Router from 'vue-router';
 
-// Vue.use(Router)
+import NavRoutes from './NavRoutes';
+const navConfig = require('./nav.config.json');
 
-// export default new Router({
-//   routes: [
-//     {
-//       path: '/',
-//       name: 'Welcome',
-//       component: Welcome
-//     }
-//   ]
-// })
+Vue.use(Router)
+
+const routes = [
+  {
+    path: '/',
+    name: 'Welcome',
+    component: () => import('../docs/Welcome.vue')
+  },
+];
+
+const modules = [
+  ...NavRoutes,
+];
+
+Object.keys(navConfig).map((value, index) => {
+  const obj = {
+    path: `/${value}`,
+    component: modules[index]
+  };
+
+  routes.push(obj);
+});
+
+export default new Router({
+  mode: 'hash',
+  routes
+});

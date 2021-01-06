@@ -15,10 +15,10 @@ yarn-error.log*
 *.njsproj
 *.sln
 
-build/
-config/
-src/
-package.json
-index.html
-static/
-lib/
+# build/
+# config/
+# src/
+# package.json
+# index.html
+# static/
+# lib/

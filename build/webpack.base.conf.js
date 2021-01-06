@@ -27,14 +27,6 @@ module.exports = {
       '@': resolve('src'),
     }
   },
-  build: {
-    // Template for index.html
-    // index: path.resolve(__dirname, '../dist/index.html'),
-    // assetsRoot: path.resolve(__dirname, '../dist'),
-    assetsSubDirectory: 'static',
-    //在这里把/改成./，如果这里加了./，那static文件夹引入的图片也要加./，这样无论打包后放到服务器的哪一级目录下，静态资源都不会报错
-    assetsPublicPath: './'
-  },
   module: {
     rules: [
       {
@@ -50,9 +42,18 @@ module.exports = {
       {
         test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
         loader: 'url-loader',
+        exclude: [resolve('src/assets/icons')],
         options: {
           limit: 10000,
           name: utils.assetsPath('img/[name].[hash:7].[ext]')
+        }
+      },
+      {
+        test: /\.svg$/,
+        loader: 'svg-sprite-loader',
+        include: [resolve('src/assets/icons')],
+        options: {
+          symbolId: 'icon-[name]'
         }
       },
       {
@@ -74,6 +75,20 @@ module.exports = {
       {
         test: /\.less$/,
         loader: "style-loader!css-loader!less-loader",
+      },
+      {
+        test: /\.md$/,
+        use: [
+          {
+            loader: 'vue-loader'
+          },
+          {
+            loader: 'vue-markdown-loader/lib/markdown-compiler',
+            options: {
+              raw: true
+            }
+          }
+        ]
       },
     ]
   },

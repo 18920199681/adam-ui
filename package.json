@@ -1,10 +1,10 @@
 {
   "name": "adam-ui-pc",
-  "version": "1.0.31",
+  "version": "1.0.36",
   "description": "A Vue.js project",
   "author": "ADAM",
   "private": false,
-  "main": "lib/adamUiPc.umd.min.js",
+  "main": "src/main.js",
   "scripts": {
     "dev": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
     "start": "npm run dev",
@@ -13,7 +13,8 @@
   },
   "dependencies": {
     "extract-text-webpack-plugin": "^3.0.2",
-    "vue": "^2.5.2"
+    "vue": "^2.5.2",
+    "vue-router": "^3.4.9"
   },
   "devDependencies": {
     "@vue/cli-service": "^4.5.9",
@@ -45,6 +46,7 @@
     "rimraf": "^2.6.0",
     "semver": "^5.3.0",
     "shelljs": "^0.7.6",
+    "svg-sprite-loader": "^5.2.1",
     "uglifyjs-webpack-plugin": "^1.1.1",
     "url-loader": "^0.5.8",
     "vue-loader": "^13.3.0",
@@ -53,7 +55,8 @@
     "webpack": "^3.6.0",
     "webpack-bundle-analyzer": "^2.9.0",
     "webpack-dev-server": "^2.9.7",
-    "webpack-merge": "^4.2.2"
+    "webpack-merge": "^4.2.2",
+    "vue-markdown-loader": "^2.4.1"
   },
   "engines": {
     "node": ">= 6.0.0",

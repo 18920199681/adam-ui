@@ -1,29 +1,30 @@
 <template>
-  <div class="toast_box" v-if="show_toast">
-    <div class="toast_body" v-if="type == 'message'">
+  <div class="toast-box" v-if="show_toast">
+    <div class="toast-body" v-if="type == 'message'">
       {{ msg }}
     </div>
-    <div class="toast_body" v-if="type == 'success'">
-      <div class="icons_box">
-        <img src="../../assets/icons/success.png" />
+    <div class="toast-body" v-if="type == 'success'">
+      <div class="icons-box">
+        <svg-icon icon-class="success" />
       </div>
       {{ msg }}
     </div>
-    <div class="toast_body" v-if="type == 'error'">
-      <div class="icons_box">
-        <img src="../../assets/icons/error.png" />
+    <div class="toast-body" v-if="type == 'error'">
+      <div class="icons-box">
+        <svg-icon icon-class="error" />
       </div>
       {{ msg }}
     </div>
-    <div class="toast_body" v-if="type == 'warn'">
-      <div class="icons_box">
-        <img src="../../assets/icons/warn.png" />
+    <div class="toast-body" v-if="type == 'warn'">
+      <div class="icons-box">
+        <svg-icon icon-class="warn" />
       </div>
       {{ msg }}
     </div>
-    <div class="toast_body" v-if="type == 'loading'">
-      <div class="icons_box">
-        <img src="../../assets/icons/loading.gif" />
+    <div class="toast-body" v-if="type == 'loading'">
+      <div class="icons-box loading">
+        <!-- <img src="../../assets/icons/loading.gif" /> -->
+        <svg-icon icon-class="loading" />
       </div>
       {{ msg }}
     </div>
@@ -93,12 +94,12 @@ export default {
 };
 </script>
 
-<style scoped>
+<style lang="less" scoped>
 template {
   height: 100%;
 }
 
-.toast_box {
+.toast-box {
   width: 100%;
   height: 100%;
   background: gainsboro;
@@ -106,7 +107,7 @@ template {
   justify-content: center;
 }
 
-.toast_body {
+.toast-body {
   max-width: 4rem;
   padding: 10px 15px;
   position: absolute;
@@ -117,12 +118,26 @@ template {
   text-align: center;
 }
 
-.icons_box {
+.icons-box {
   width: 0.8rem;
   margin: auto;
 }
 
-.icons_box img {
-  width: 100%;
+.icons-box {
+  img,
+  .svg-icon {
+    width: 100%;
+  }
+  @keyframes loading {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  &.loading {
+    animation: loading 3s linear infinite;
+  }
 }
 </style>
