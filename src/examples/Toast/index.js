@@ -9,6 +9,11 @@ let toast = (msg) => {
   toast_fn.message(msg);
 }
 
+toast.message = (msg) => {
+  document.body.appendChild(toast_fn.$el);
+  toast_fn.message(msg);
+}
+
 toast.success = (msg) => {
   document.body.appendChild(toast_fn.$el);
   toast_fn.success(msg);

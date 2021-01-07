@@ -1,7 +1,7 @@
-import GDInput from '@/docs/Input.md';
-import Toast from '@/docs/Toast.md';
+import Form from './Form';
+import Notice from './Notice';
 
 export default [
-  GDInput,
-  Toast
+  Form,
+  Notice,
 ];

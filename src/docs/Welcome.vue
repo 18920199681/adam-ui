@@ -1,40 +1,77 @@
 <template>
-  <div class="main-container">
+  <div class="gd-welcome-container">
     <!-- 头部 -->
-    <gd-header></gd-header>
+    <gd-header />
 
-    <!-- 主体部分 -->
-    <div class="main-box">main</div>
+    <div class="gd-main-body">
+      <!-- 主体部分 -->
+      <div>
+        <gd-nav />
+
+        <div class="gd-main-container">
+          <router-view />
+        </div>
+      </div>
+
+      <!-- 底部 -->
+      <!-- <gd-footer /> -->
+    </div>
   </div>
 </template>
 
 <script>
-import gdHeader from "@/examples/components/Header";
-import gdNav from "@/examples/components/Nav";
-import gdFooter from "@/examples/components/Footer";
+import gdHeader from "./components/Header";
+import gdNav from "./components/Nav";
+// import gdFooter from "./components/Footer";
 
 export default {
   components: {
     gdHeader,
     gdNav,
-    gdFooter,
+    // gdFooter,
   },
 };
 </script>
 
 <style lang="less" scoped>
-.main-container {
+.gd-welcome-container {
   height: 100vh;
   overflow: hidden;
 
   /deep/.gd-header-container {
-    height: 100px;
+    height: 70px;
   }
 
-  .main-box {
-    height: calc(100vh - 100px);
+  .gd-main-body {
+    height: calc(100vh - 70px);
     overflow-y: scroll;
-    background: #f7f7f7;
+
+    > div:first-child {
+      display: flex;
+      // min-height: calc(100vh - 70px - 290px);
+
+      /deep/.gd-nav-container {
+        width: 240px;
+        height: calc(100vh - 70px);
+      }
+
+      .gd-main-container {
+        width: calc(100% - 240px);
+        padding: 50px 30px;
+      }
+    }
+  }
+
+  /* 滚动条样式 */
+  ::-webkit-scrollbar {
+    width: 5px;
+    background: #ffffff;
+  }
+
+  /* 滚动条滑块 */
+  ::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.6);
+    border-radius: 10px;
   }
 }
 </style>

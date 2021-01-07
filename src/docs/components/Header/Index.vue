@@ -8,7 +8,6 @@ export default {};
 
 <style lang="less" scoped>
 .gd-header-container {
-  background: red;
   height: 100%;
 }
 </style>
