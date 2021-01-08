@@ -21,4 +21,4 @@ yarn-error.log*
 # package.json
 # index.html
 # static/
-# lib/
+lib/

@@ -20,9 +20,9 @@
 </template>
 
 <script>
-import gdHeader from "./components/Header";
-import gdNav from "./components/Nav";
-// import gdFooter from "./components/Footer";
+import gdHeader from "./components/Header/Index";
+import gdNav from "./components/Nav/Index";
+// import gdFooter from "./components/Footer/Index";
 
 export default {
   components: {
