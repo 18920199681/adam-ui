@@ -1,4 +1,4 @@
-import Toast from '@/docs/Toast.md';
+import Toast from '../../docs/Toast.md';
 
 const Notice = {
   group: 'Notice',

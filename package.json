@@ -1,15 +1,15 @@
 {
   "name": "adam-ui-pc",
-  "version": "1.0.36",
+  "version": "1.0.41",
   "description": "A Vue.js project",
   "author": "ADAM",
   "private": false,
-  "main": "src/main.js",
+  "main": "src/examples/index.js",
   "scripts": {
     "dev": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
     "start": "npm run dev",
     "build": "node build/build.js",
-    "lib": "vue-cli-service build --target lib --name adamUiPc --dest lib src/main.js"
+    "lib": "vue-cli-service build --target lib --name adamUiPc --dest lib src/examples/index.js"
   },
   "dependencies": {
     "extract-text-webpack-plugin": "^3.0.2",

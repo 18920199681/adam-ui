@@ -6,6 +6,12 @@ const navConfig = require('./NavRoutes/nav.config.json');
 
 Vue.use(Router);
 
+const routerPush = Router.prototype.push;
+Router.prototype.push = function push(location, onResolve, onReject) {
+  if (onResolve || onReject) return routerPush.call(this, location, onResolve, onReject);
+  return routerPush.call(this, location).catch(error => error);
+};
+
 const routes = [
   {
     path: '/',

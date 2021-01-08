@@ -1,8 +1,8 @@
-<!-- <script>
+<script>
 export default {
 
     mounted() {
-      // Toast.message('无图标');
+      Toast.message('无图标');
       // Toast.success('成功');
       // Toast.error('失败');
       // Toast.warn('警告');
@@ -14,7 +14,7 @@ export default {
     }
 
 }
-</script> -->
+</script>
 
 # Toast消息提示
 

@@ -1,4 +1,4 @@
-import GDInput from '@/docs/Input.md';
+import GDInput from '../../docs/Input.md';
 
 const Form = {
   "group": "Form",

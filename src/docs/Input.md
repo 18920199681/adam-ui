@@ -5,7 +5,7 @@
 
 <gd-input label="test：" :required="true" errorMessage="test"></gd-input>
 <script>
-import gdInput from '@/examples/Input/Input.vue'; 
+import gdInput from '../examples/Input/Input.vue'; 
 
 export default {
   components: {
