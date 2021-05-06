@@ -23,8 +23,7 @@
     </div>
     <div class="toast-body" v-if="type == 'loading'">
       <div class="icons-box loading">
-        <!-- <img src="../../assets/icons/loading.gif" /> -->
-        <svg-icon icon-class="loading" />
+        <svg-icon icon-class="load" />
       </div>
       {{ msg }}
     </div>
@@ -119,14 +118,10 @@ template {
 }
 
 .icons-box {
-  width: 0.8rem;
-  margin: auto;
-}
-
-.icons-box {
   img,
   .svg-icon {
-    width: 100%;
+    width: 22px;
+    height: 22px;
   }
   @keyframes loading {
     0% {

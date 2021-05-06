@@ -44,7 +44,7 @@
           @click="onShowPassword"
           v-if="type === 'password' && showPassword"
         >
-          <svg-icon icon-class="icon_eye_open" />
+          <svg-icon icon-class="eye-open" />
         </span>
 
         <span
@@ -52,7 +52,7 @@
           @click="onShowPassword"
           v-if="type === 'password' && !showPassword"
         >
-          <svg-icon icon-class="icon_eye_close" />
+          <svg-icon icon-class="eye-close" />
         </span>
       </div>
 
@@ -139,9 +139,9 @@ export default {
     },
 
     onShowPassword() {
-      console.log(111);
       this.showPassword = !this.showPassword;
       this.passwordType = this.passwordType === "password" ? "text" : "password";
+      this.$emit("showPassword");
     },
   },
 };
@@ -169,6 +169,12 @@ export default {
     > div {
       width: 100%;
       box-sizing: border-box;
+    }
+
+    svg,
+    .svg-icon {
+      width: 16px;
+      height: 16px;
     }
 
     .gd-input-inner {
@@ -225,8 +231,8 @@ export default {
     }
 
     .icon {
-      width: 14px;
-      height: 14px;
+      width: 16px;
+      height: 16px;
       cursor: pointer;
 
       &.left-icon {
@@ -264,9 +270,10 @@ export default {
       display: flex;
       align-items: center;
 
+      svg,
       .svg-icon {
-        width: 11px;
-        height: 11px;
+        width: 16px;
+        height: 16px;
         margin-right: 6px;
       }
     }

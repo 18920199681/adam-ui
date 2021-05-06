@@ -3,7 +3,7 @@
 ---
 <br />
 
-<gd-input label="test：" :required="true" errorMessage="test"></gd-input>
+<gd-input type="password" label="密码：" :required="true" errorMessage="请输入密码"></gd-input>
 <script>
 import gdInput from '../examples/Input/Input.vue'; 
 
@@ -21,7 +21,7 @@ export default {
 :::demo
 
 ``` html
-<gd-input label="test：" :required="true" errorMessage="test"></gd-input>
+<gd-input type="password" label="test：" :required="true" errorMessage=""></gd-input>
 ```
 
 :::

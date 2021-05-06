@@ -43,8 +43,6 @@ Object.keys(navConfig).map((group, index) => {
   });
 });
 
-console.log(routes);
-
 export default new Router({
   mode: 'hash',
   routes
