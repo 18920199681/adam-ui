@@ -3,6 +3,7 @@ const path = require('path')
 const utils = require('./utils')
 const config = require('../config')
 const vueLoaderConfig = require('./vue-loader.conf')
+const striptags = require('./strip-tags')
 
 function resolve(dir) {
   return path.join(__dirname, '..', dir)
@@ -78,17 +79,35 @@ module.exports = {
       },
       {
         test: /\.md$/,
-        use: [
-          {
-            loader: 'vue-loader'
-          },
-          {
-            loader: 'vue-markdown-loader/lib/markdown-compiler',
-            options: {
-              raw: true
-            }
+        loader: 'vue-markdown-loader',
+        options: {
+          use: [
+            [require('markdown-it-container'), 'demo', {
+              validate: function (params) {
+                return params.trim().match(/^demo\s*(.*)$/);
+              },
+              render: function (tokens, idx) {
+                if (tokens[idx].nesting === 1) {
+                  const html = utils.convertHtml(striptags(tokens[idx + 1].content, 'script'))
+                  // 移除描述，防止被添加到代码块
+                  tokens[idx + 2].children = [];
+
+                  return `<code-block class="demo-box">
+                    <div class="source" slot="source">${html}</div>
+                    <div class="highlight" slot="highlight">`;
+                }
+                return '</div></code-block>\n';
+              }
+            }]
+          ],
+          preprocess: function (MarkdownIt, source) {
+            MarkdownIt.renderer.rules.table_open = function () {
+              return '<table class="table">';
+            };
+            MarkdownIt.renderer.rules.fence = wrap(MarkdownIt.renderer.rules.fence);
+            return source;
           }
-        ]
+        },
       },
     ]
   },
@@ -101,3 +120,11 @@ module.exports = {
     child_process: 'empty'
   }
 }
+
+var wrap = function (render) {
+  return function () {
+    return render.apply(this, arguments)
+      .replace('<code class="', '<code class="hljs ')
+      .replace('<code>', '<code class="hljs">');
+  };
+};

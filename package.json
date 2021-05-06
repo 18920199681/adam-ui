@@ -1,6 +1,6 @@
 {
   "name": "adam-ui-pc",
-  "version": "1.0.53",
+  "version": "1.0.54",
   "description": "A Vue.js project",
   "author": "ADAM",
   "private": false,
@@ -14,7 +14,8 @@
   "dependencies": {
     "extract-text-webpack-plugin": "^3.0.2",
     "vue": "^2.5.2",
-    "vue-router": "^3.4.9"
+    "vue-router": "^3.4.9",
+    "markdown-it-container": "^2.0.0"
   },
   "devDependencies": {
     "@vue/cli-service": "^4.5.9",

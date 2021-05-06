@@ -22,17 +22,12 @@ export default {
 <br />
 
 ### 基础用法
+<br />
 
 :::demo
-
 ``` html
 <template>
-  <span @click="toastMessage">无图标</span>
-  <span @click="toastSuccess">成功</span>
-  <span @click="toastError">失败</span>
-  <span @click="toastWarn">失败</span>
-  <span @click="toastLoading">加载中</span>
-  <span @click="toastClose">关闭toast</span>
+  基础用法
 </template>
 
 <script>
