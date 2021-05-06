@@ -44,7 +44,7 @@
           @click="onShowPassword"
           v-if="type === 'password' && showPassword"
         >
-          <svg-icon icon-class="eye-open" />
+          <svg-icon icon-class="icon_eye_open" />
         </span>
 
         <span
@@ -52,7 +52,7 @@
           @click="onShowPassword"
           v-if="type === 'password' && !showPassword"
         >
-          <svg-icon icon-class="eye-close" />
+          <svg-icon icon-class="icon_eye_close" />
         </span>
       </div>
 
