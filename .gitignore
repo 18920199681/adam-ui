@@ -15,7 +15,7 @@ yarn-error.log*
 *.njsproj
 *.sln
 
-build/
+# build/
 config/
 src/
 package.json
