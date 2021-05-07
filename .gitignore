@@ -16,9 +16,9 @@ yarn-error.log*
 *.sln
 
 # build/
-config/
-src/
-package.json
-index.html
-static/
+# config/
+# src/
+# package.json
+# index.html
+# static/
 # lib/
