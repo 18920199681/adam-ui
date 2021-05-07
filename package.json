@@ -9,9 +9,8 @@
     "dev": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
     "start": "npm run dev",
     "build": "node build/build.js",
-    "lib": "vue-cli-service build --target lib --name adamUiPc --dest lib src/examples/index.js",
-    "build-examples": "webpack --config  build/webpack.examples.conf.js",
-    "build-packages": "webpack --progress --display-modules --colors --display-reasons --config  build/webpack.packages.conf.js"
+    "build:npm": "node build/webpack.npm.conf.js",
+    "lib": "vue-cli-service build --target lib --name adamUiPc --dest lib src/examples/index.js"
   },
   "dependencies": {
     "extract-text-webpack-plugin": "^3.0.2",
